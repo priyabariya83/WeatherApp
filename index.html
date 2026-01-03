@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- Lightning flash -->
+<div id="lightning" aria-hidden="true"></div>
+
+<main class="app" role="main">
+  <h1 id="dayEmoji" aria-live="polite">🌞 Weather App</h1>
+
+  <div class="search" role="search">
+    <label for="city" class="sr-only">Enter Indian city</label>
+    <input
+      id="city"
+      type="text"
+      placeholder="Enter Indian city"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="suggestions"
+    >
+    <button onclick="getWeather()" aria-label="Check weather">Check</button>
+  </div>
+
+  <div id="suggestions" class="suggestions" role="listbox"></div>
+
+  <div class="loader" id="loader" aria-hidden="true"></div>
+
+  <section class="card" id="card" aria-live="polite">
+    <h2 id="location">City</h2>
+
+    <p class="temp">
+      <span id="temp">0</span>
+      <span aria-hidden="true">°C</span>
+    </p>
+
+    <div class="stats">
+      <div>
+        💧 <span id="humidity">0</span>%
+        <small>Humidity</small>
+      </div>
+      <div>
+        🌬 <span id="wind">0</span> km/h
+        <small>Wind</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
